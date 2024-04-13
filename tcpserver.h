@@ -11,7 +11,7 @@ class tcpserver : public QObject
 public:
     explicit tcpserver(QObject *parent = nullptr);
     ~tcpserver();
-    void senData();//发送数据
+//    void senData();//发送数据
     void listen();//监听指定端口信息
 signals:
 
@@ -19,8 +19,8 @@ public slots:
 
 
 private:
-    QTcpServer *m_s;
-    QTcpSocket *m_t;
+    QTcpServer *m_server;
+    QTcpSocket *m_tcpsocket;
 };
 
 #endif // TCPSERVER_H
