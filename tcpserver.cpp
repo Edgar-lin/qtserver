@@ -7,6 +7,7 @@ tcpserver::tcpserver(QObject *parent) : QObject(parent)
     qDebug()<<"主线程线程id为:"<<QThread::currentThreadId();
     //创建监听的服务器对象
     m_server = new QTcpServer(this);//指定父类对象后，析构父类对象时会首先析构子类
+    m_server->listen(QHostAddress::Any,8899);
     //检查到客户端发起连接
     connect(m_server,&QTcpServer::newConnection,this,[=]{
         m_tcpsocket = m_server->nextPendingConnection();//获取到tcp连接

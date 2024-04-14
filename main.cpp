@@ -5,6 +5,6 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
     tcpserver tcp;
-    tcp.listen();
+    //tcp.listen();
     return a.exec();
 }
